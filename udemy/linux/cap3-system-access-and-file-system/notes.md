@@ -92,4 +92,16 @@ Ex: lrwxrwxrwt
 Caso o arquivo seja um arquivo, propriamente dito, o campo type começará vazio, ou com **-**. <br/>
 Ex: -rw-r--r--
 
+## Aula 46
+Para buscar arquivos, existem dois comandos: **locate** e **find**.
+
+A grande diferença entre eles é que o **locate** mantém um banco de dados (um cache) com as informações dos arquivos do sistema. Assim, as buscas acontecem nesse banco. Ela é muito mais rápida do que o comando **find**, que basicamente itera sobre todos os arquivos do sistema.
+De tempos em tempos, o sistema roda automaticamente o comando **updatedb** para atualizar o banco de dados.
+
+Para usar o comando locate, existem dois detalhes importantes:
+- é preciso ter o pacote **mlocate** instalado
+  - **yum install mlocate**
+- caso o comando não retorne nada, acesse o terminal como root e rode o comando:
+  - **updatedb**
+
 
