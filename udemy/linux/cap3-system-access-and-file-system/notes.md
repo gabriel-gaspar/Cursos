@@ -70,9 +70,13 @@ Dentro desse diretório, existem uma série de pastas destinadas a armazenarem a
 
 ## Aula 42
 Existem os seguintes tipos de arquivos no linux:
--   arquivos
--   diretórios
--   links simbólicos
+-   regular file (arquivo)
+-   directory (diretório)
+-   link (link simbólico)
+-   special file or device file (dispositivos conectados à máquina)
+-   socket
+-   named pipe
+-   block device
 
 Dentro de um diretório, ao executar o comando:
 <> ls -l
