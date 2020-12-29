@@ -1,6 +1,6 @@
 # Comando aprendidos neste capítulo
 
-# Utilitários ----------------------------------------------------------
+# Utilitários -------------------------------------------------------------------------------------------
 
 # exibe usuario atual logado no sistema
 whoami
@@ -11,12 +11,12 @@ su - # trocar para o usuário root
 
 clear # limpa terminal
 
-# Rede -----------------------------------------------------------------
+# Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
 ip addr # Lista interfaces de rede
 ip a # Lista interfaces de rede
 
-# Sistema de arquivos --------------------------------------------------
+# Sistema de arquivos ------------------------------------------------------------------------------------
 # cd - change directory
 cd /folderName
 #pwd - print working directory
@@ -34,3 +34,8 @@ mkdir documentos # cria um diretório
 find . -name gaspar.txt # a partir do caminho atual, procura pelo arquivo
 find / -name gaspar.txt # procura o arquivo a partir da raíz do sistema (necessário acesso root)
 locate gaspar.txt # procura o arquivo
+
+# Controle de usuários ------------------------------------------------------------------------------------
+passwd # inicia algoritmo para troca da senha do usuário atual
+passwd userId # inicia algoritmo para troca da senha de um usuário (necessário estar como root)
+passwd - # inicia algoritmo para troca da senha do usuário root (necessário estar como root)
