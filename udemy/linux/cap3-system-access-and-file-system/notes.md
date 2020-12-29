@@ -1,14 +1,16 @@
 # Capítulo 3 - System Access and File System
 
 ## Aula 33
-Para acessar um sistema linux de forma remota a partir de uma máquina Windows, é preciso instalar o software Putty. <br/>
+Para acessar um sistema linux de forma remota a partir de uma máquina Windows, é preciso instalar o software Putty.
+
 Caso a sua máquina seja Linux, não precisa. Basta fazer o acesso via protocolo SSH.
 
 ## Aula 35
 Para conectar ao terminal de uma máquina remota, é preciso saber o IP dela.
-Uma forma de descobrir o IP de uma máquina, é acessando o terminal dela e listando as interfaces de rede que ela possui. <br/>
+Uma forma de descobrir o IP de uma máquina, é acessando o terminal dela e listando as interfaces de rede que ela possui.
 
-Comando para listar as interfaces de rede conectadas à máquina: <br/>
+Comando para listar as interfaces de rede conectadas à máquina:
+
 <> ifconfig <br/>
 <> ip addr <br/>
 <> ip a <br/>
@@ -16,17 +18,18 @@ Comando para listar as interfaces de rede conectadas à máquina: <br/>
 O comando **ifconfig** está sendo depreciado em algumas versões do linux. Dê preferência pelos comandos "**ip a**" ou "**up addr**".
 
 ## Aula 36
-Se a máquina linux remota não tiver um IP atribuído à sua interface de rede, então será necessário fazer isso manualmente. <br/>
+Se a máquina linux remota não tiver um IP atribuído à sua interface de rede, então será necessário fazer isso manualmente.
 
 Acesse o terminal como administrador e use o comando:<br/>
 <> ifup enp0s3 <br/>
 
-O comando vai ativar a interface de rede, permitindo que ela se comunique pela rede. <br/>
+O comando vai ativar a interface de rede, permitindo que ela se comunique pela rede.
 
-No caso acima, **enp0s3** é o nome da interface de rede, obtido pelo comando **ifconfig**.<br/>
+No caso acima, **enp0s3** é o nome da interface de rede, obtido pelo comando **ifconfig**.
 
 ## Aulas 38-39
-O sistema de arquivos do linux é uma árvore de diretórios organizados de forma hierárquica. No topo está o diretório **"/"**, também conhecido como Raíz do sistema.<br/>
+O sistema de arquivos do linux é uma árvore de diretórios organizados de forma hierárquica. No topo está o diretório **"/"**, também conhecido como Raíz do sistema.
+
 Dentro desse diretório, existem uma série de pastas destinadas a armazenarem arquivos e informações com diferentes propósitos.
 - /boot
   - é o primeiro diretório a ser acessado quando o sistema é iniciado.
