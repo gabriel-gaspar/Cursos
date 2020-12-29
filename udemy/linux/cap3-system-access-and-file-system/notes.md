@@ -67,3 +67,25 @@ Dentro desse diretório, existem uma série de pastas destinadas a armazenarem a
   - diretório usado para montar outros sistemas de arquivos na máquina 
 - /media
   - diretório onde ficam os dados de dispositivos de mídia externos, como CD-ROM.
+
+## Aula 42
+Existem os seguintes tipos de arquivos no linux:
+-   arquivos
+-   diretórios
+-   links simbólicos
+
+Dentro de um diretório, ao executar o comando:
+<> ls -l
+
+Todo o conteúdo do diretório será exibido, com informações detalhadas, incluindo o tipo de cada arquivo.
+
+Caso o arquivo seja um diretório, o campo type começará com **d**. <br/>
+Ex: dr-xr-xr-x 
+
+Caso o arquivo seja um link simbólico, o campo type começará com **l**. <br/>
+Ex: lrwxrwxrwt
+
+Caso o arquivo seja um arquivo, propriamente dito, o campo type começará vazio, ou com **-**. <br/>
+Ex: -rw-r--r--
+
+
