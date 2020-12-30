@@ -35,7 +35,7 @@ Dentro desse diretório, existem uma série de pastas destinadas a armazenarem a
   - é o primeiro diretório a ser acessado quando o sistema é iniciado.
   - nela estão os arquivos com informações sobre como deve ser feita a inicialização do sistema operacional (ou boot).
 - /root
-  - diretório do usuário que está autenticado no sistema
+  - diretório do usuário root do sistema
 - /dev
   - armazena os arquivos com informações sobre os mídias físicas da máquina, como discos rígidos, cdrom, entradas e saídas de áudio, teclado etc...)
 - /etc

@@ -15,6 +15,10 @@ ln /home/gaspar/contrato #cria hard link para arquivo
 ln -s /home/gaspar/contrato #cria soft link para arquivo
 
 man ls # acessa o manual do comando ls
+whatis ls # obtém descrição de um comando
+ls --help #
+
+date # obtém a data atual
 
 # Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
@@ -63,3 +67,21 @@ chmod a+r jerry
 chmod g+rw jerry
 chmod o+w jerry
 chmod ugo-x jerry
+
+# trocar o dono de um arquivo
+chown root gaspar.txt
+# trocar o grupo ao qual um arquivo pertecente
+chgrp root gaspar.txt
+# Ajustes finos de permissões
+getfacl path/to/file
+setfacl -m u:userName:rwx /path/to/file
+setfacl -m g:groupName:rw path/to/file
+setfacl -dm "rwx" /path/to/file
+setfacl -b /path/to/file
+
+# Manipulação de arquivos e textos
+echo "hello world" > hellofile
+echo "hello again" >> hellofile
+cat hellofile
+touch fileWithOutput
+ls -ltr > fileWithOutput # escreve a saída de um comando em um arquivo

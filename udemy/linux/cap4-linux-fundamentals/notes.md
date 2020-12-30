@@ -40,3 +40,31 @@ Os diretórios possuem o campo type no seguinte formato: <br/>
 drwxrwxr-x <br/>
 Se a permissão de execução (x) for removida de todos os níveis (u,g,o), ninguém poderá acessar a pasta, apenas o usuário **root**.
 
+## Aula 56
+Arquivos do linux pertencem a usuários e grupos de usuários.
+Apenas o usuário root pode alterar os donos de um arquivo.
+O dono de um arquivo, ou o grupo de usuários ao qual um arquivo pertence, podem ser alterados pelos comandos: **chown e chgrp**
+
+Curiosidade: Se você for o usuário gaspar e dentro do seu diretório (/home/gaspar) haver um arquivo que pertence ao usuário root, você ainda assim poderá fazer o que quiser com esse arquivo, pois o seu diretório /home/gaspar pertence a você e te permite ler, escrever e executar qualquer arquivo que estiver dentro.
+
+## Aula 57
+Para dar permissões específicas para um usuários, ou para um grupo de usuário, sobre um arquivo, deve-se usar o recurso Access List Control.
+
+Toda vez que um arquivo possuir permissões desse tipo, um "+" será o ultimo caractere do campo type desse arquivo.
+
+Exemplos:
+Para listar as permissões ACL de um arquivo
+getfacl path/to/file
+
+Para adicionar permissões a um usuário em especifico
+setfacl -m u:userName:rwx /path/to/file
+
+Para adicionar permissões a um grupo de usuários específico
+setfacl -m g:groupName:rw path/to/file
+
+Para adicionar permissões a um diretório e todos os seus arquivos filhos
+setfacl -dm "rwx" /path/to/file
+
+Para remover todas as permissões ACL
+setfacl -b /path/to/file
+
