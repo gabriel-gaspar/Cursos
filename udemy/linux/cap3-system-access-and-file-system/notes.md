@@ -105,3 +105,37 @@ Para usar o comando locate, existem dois detalhes importantes:
   - **updatedb**
 
 
+## Aula 48
+Em determinadas atividades, costuma ser preciso operar em uma grande quantidade de arquivos (seja para criar, remover etc...). Se esses arquivos tiverem um padrão em sua nomenclatura, é possível escrever um comando que vai atuar em todos eles!. Para fazer isso, usa-se os chamados **WildCards**.
+
+Existem 3:
+- *(asterisco)
+  - representa uma totalidade (ou nenhum)
+- ?(interrogação)
+  - representa um valor em específico, mas que não é importante
+- [](colchetes)
+  - representa um conjunto de possibilidades
+
+Ex1:
+Para criar 9 arquivos com os nomes: arquivo1-xyz, arquivo2-xyz, arquivo3-xyz...arquivo9-xyz, basta usar o wildcard de conjunto **{}**.<br/>
+<> touch arquivo[1..9]-xyz
+
+Ex2:
+Para listar todos os arquivos que começam com "abc", basta usarmos o wildcard de totalidade.<br/>
+<> ls -l abc*
+
+Ex3:
+Para listar todos os arquivos que terminam com "xyz", basta usarmos o wildcard de totalidade.<br/>
+<> ls -l *xyz
+
+Ex4:
+Para listar todos os arquivos que começam com uma caractere qualquer, seguido de "bcd", basta combinar dois wildcards, o de ? e o de totalidade.<br/>
+<> ls -l ?bcd*
+
+Ex5:
+Para listar todos os arquivos que possuem "xy", basta usar o wildcard de totalidade.<br/>
+<> ls -l * xy *
+
+Ex6:
+Para listar todos os arquivos que possuem ou "x", ou "y", basta usar o wildcard de conjunto.<br/>
+<> ls -l * [xy] *

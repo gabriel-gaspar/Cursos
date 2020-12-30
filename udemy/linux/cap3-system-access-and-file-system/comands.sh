@@ -25,8 +25,15 @@ pwd
 ls  # lista o conteúdo de um diretório
 ls -l # lista e detalha o conteúdo de um diretório
 ls -ltr # lista com detalhes, ordena por tempo em ordem reversa
+ls -l *[xy]* # lista arquivos que satisfizerem o wildcard
+ls -l * xy * # lista arquivos que satisfizerem o wildcard
+ls -l ?bcd* # lista arquivos que satisfizerem o wildcard
+ls -l *xyz # lista arquivos que satisfizerem o wildcard
+ls -l abc* # lista arquivos que satisfizerem o wildcard
+
 
 touch gaspar.txt   # cria um arquivo
+touch arquivo[1..9]-xyz # cria arquivos seguindo o padrão do wildcard
 cp ./gaspar.txt ./gaspar_backuo.txt  #faz uma cópia do arquivo
 mkdir documentos # cria um diretório
 
