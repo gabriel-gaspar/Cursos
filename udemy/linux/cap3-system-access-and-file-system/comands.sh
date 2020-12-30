@@ -14,6 +14,8 @@ clear # limpa terminal
 ln /home/gaspar/contrato #cria hard link para arquivo
 ln -s /home/gaspar/contrato #cria soft link para arquivo
 
+man ls # acessa o manual do comando ls
+
 # Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
 ip addr # Lista interfaces de rede
@@ -36,6 +38,8 @@ ls -l abc* # lista arquivos que satisfizerem o wildcard
 
 
 touch gaspar.txt   # cria um arquivo
+rm -f gaspar.txt   # remove um arquivo
+rm -r folderName   # remove uma pasta
 touch arquivo[1..9]-xyz # cria arquivos seguindo o padrão do wildcard
 cp ./gaspar.txt ./gaspar_backuo.txt  #faz uma cópia do arquivo
 mkdir documentos # cria um diretório
@@ -49,3 +53,13 @@ locate gaspar.txt # procura o arquivo
 passwd # inicia algoritmo para troca da senha do usuário atual
 passwd userId # inicia algoritmo para troca da senha de um usuário (necessário estar como root)
 passwd - # inicia algoritmo para troca da senha do usuário root (necessário estar como root)
+
+# Controle de permissões -
+chmod g-w jerry
+chmod u-w jerry
+chmod a-r jerry
+chmod u+w jerry
+chmod a+r jerry
+chmod g+rw jerry
+chmod o+w jerry
+chmod ugo-x jerry
