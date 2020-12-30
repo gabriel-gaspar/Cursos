@@ -11,6 +11,9 @@ su - # trocar para o usuário root
 
 clear # limpa terminal
 
+ln /home/gaspar/contrato #cria hard link para arquivo
+ln -s /home/gaspar/contrato #cria soft link para arquivo
+
 # Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
 ip addr # Lista interfaces de rede

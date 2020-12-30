@@ -124,7 +124,7 @@ Ex2:
 Para listar todos os arquivos que começam com "abc", basta usarmos o wildcard de totalidade.<br/>
 <> ls -l abc*
 
-Ex3:
+Ex3:/
 Para listar todos os arquivos que terminam com "xyz", basta usarmos o wildcard de totalidade.<br/>
 <> ls -l *xyz
 
@@ -139,3 +139,27 @@ Para listar todos os arquivos que possuem "xy", basta usar o wildcard de totalid
 Ex6:
 Para listar todos os arquivos que possuem ou "x", ou "y", basta usar o wildcard de conjunto.<br/>
 <> ls -l * [xy] *
+
+## Aula 49
+No windows existem os atalhos. No linux existem os Links.
+
+Links podem ser de dois tipos: **Hard** e **Soft**.
+
+Todo arquivo criado no linux recebe um número de identificação. Esse número se refere ao endereço de memória (no disco) onde o arquivo está armazenado. Ele é conhecido como **inode**.
+
+Um **hard link** é um "arquivo" que, na verdade, é um ponteiro para o **inode** do arquivo original. <br/>
+Ex: Ao se criar o arquivo exemplo.txt, ele recebe um inode.
+Ao se criar um hard link para esse arquivo, com o nome exemplo_link, o que se está fazendo é criar um ponteiro apontando para o inode do arquivo exemplo.txt. Mesmo se o nome do arquivo principal for alterado para, digamos, exemplo2.txt, o hard link vai continuar funcionando, pois o **inode** continua o mesmo. 
+
+Um **soft link** é ligeiramente diferente. Ele é um ponteiro para o caminho de um determinado arquivo. Se o nome desse arquivo for alterado, o seu caminho também o será e, assim, o link deixa de funcionar.
+
+Para verificar o inode de arquivos dentro de uma pasta, basta executar o comando: <br/>
+<> ls -ltri <br/>
+O "i" significa inode.
+
+Ex:<br/>
+Supondo que exista o arquivo no seguinte caminho: /home/gaspar/contrato <br/>
+Para criar um **hard link**: <br/>
+<> ln /home/gaspar/contrato <br/>
+Para criar um **soft link**: <br/>
+<> ln -s /home/gaspar/contrato
