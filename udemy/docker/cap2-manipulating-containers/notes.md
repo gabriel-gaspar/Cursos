@@ -12,3 +12,19 @@ Os processos que rodam dentro das namespaces também são encerrados via esses d
 O comando "docker stop containerID" faz o kernel enviar um SIGTERM para o processo principal dentro do container.
 
 O comando "docker kill containerID" faz o kernel enviar um SIGKILL para o processo principal dentro do container.
+
+## Aula 23 - 25
+Todo processo do linux possui três interfaces com o sistema operacional:
+- STDIN
+  - Essa é a interface de entrada.
+  - Toda informação que chega ao processo entra por essa interface
+  - Quando um comando é enviado a um processo, ele chega neste pelo STDIN
+- STDOUT
+  - Esse é o ponto de saída de dados e informações do processo
+  - Todo log, ou outro tipo de informação que o processo responde, é retornado pelo STDOUT
+- STDERR
+  - Esse é o canal usado pelo processo para comunicar erros internos.
+
+O mesmo vale para um processo rodando dentro de um container.
+
+Existem comandos do docker que permitem conectar o terminal da sua máquina local à interface STDIN do processo que está dentro do container. Dessa forma, se o processo que está dentro do container for um outro terminal (shell), é possível rodar comandos dentro do container a partir do terminal local da máquina host.
