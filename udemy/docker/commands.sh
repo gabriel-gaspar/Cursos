@@ -47,4 +47,15 @@ docker build -t dockerID/nomeDaImagem:latest .
 # para executar a aplicação que tiver sido instalada dentro dele.
 docker commit -c 'CMD ["redis-server"]' containerID
 
+# Implanta toda a infraestrutura de containers declarada em um docker-compose.yml
+docker-compose up # o terminal fica preso dentro do último container implantado
+docker-compose up -d # O terminal fica livre após o término da implantação
+docker-compose up --build #  faz o rebuild da imagem antes de implantar o container
+
+# Pause todos os containers implantados pela execução do docker-compose
+docker-compose down
+
+# Lista o status de todos os containers implantados pelo docker-compose.yml
+docker-compose ps 
+
 
