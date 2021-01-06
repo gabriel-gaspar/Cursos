@@ -18,6 +18,9 @@ docker run -it redis sh
 # Não é possível sobrescrever o comando de execução de um container já criado
 docker run redis echo hello there!
 
+# Implanta um container com mapeamento de porta
+docker run -p 8080:8080 imageName
+
 # Lista containers rodando na máquina
 docker ps 
 # Lista todos os containers da máquina (rodando ou não)
@@ -43,3 +46,5 @@ docker build -t dockerID/nomeDaImagem:latest .
 # A partir de um container, é possível criar uma imagem com o seu estado atual, passando inclusive o comando
 # para executar a aplicação que tiver sido instalada dentro dele.
 docker commit -c 'CMD ["redis-server"]' containerID
+
+
