@@ -35,3 +35,11 @@ docker exec -it containerID command
 # Acessa um terminal shell dentro do container
 docker exec -it containerID sh
 
+# Faz o build da imagem a partir do dockerfile, que deve estar no diretório atual (por causa do ".")
+docker build .
+# Faz o build e atribui uma tag à imagem
+docker build -t dockerID/nomeDaImagem:latest .
+
+# A partir de um container, é possível criar uma imagem com o seu estado atual, passando inclusive o comando
+# para executar a aplicação que tiver sido instalada dentro dele.
+docker commit -c 'CMD ["redis-server"]' containerID
