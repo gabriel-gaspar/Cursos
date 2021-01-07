@@ -1,5 +1,12 @@
 # Section 5 - Docker compose with multiple local containers
 
+A **docker-compose** file is the best way of managing multiple containers in a local machine. Until now, you have been working with containers using the CLI, which is the **imperative** way of dealing with docker.
+
+**docker-compose** offers a **declarative** way of managing container infrastructure. You just specify what you want to do and the Docker Server will do all the work to deploy it.
+
+Example:
+
+**docker-compose.yml**
 ```YML
 # Docker-compose version
 version: '3'
@@ -22,7 +29,6 @@ services:
           - "8081:8081"
         # No matter the reason, the container will be restarted as soon as it gets stopped 
         restart: always
-
 ```
 
 ### Important notes about some fields:
