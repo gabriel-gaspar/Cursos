@@ -58,4 +58,7 @@ docker-compose down
 # Lista o status de todos os containers implantados pelo docker-compose.yml
 docker-compose ps 
 
+# Cria um container de forma imperativa com mapeamento de portas e volumes.
+docker run -p 3000:3000 -v /app/node_modules -v $(pwd):/app imageName
+
 
