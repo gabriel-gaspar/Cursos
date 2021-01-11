@@ -1,0 +1,22 @@
+sudo: required
+
+services:
+  - docker
+
+before_install:
+  - curl -L "https://github.com/docker/compose/releases/download/1.27.4/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+  - chmod +x /usr/local/bin/docker-compose
+  - docker-compose --version
+
+script:
+  - docker-compose up
+  # Retrieve de container ID and exec mkdoc build inside it 
+  - docker container exec -it $(docker container ls | grep squidfunk/mkdocs-material | awk '{print $1}') mkdoc build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: /documentation/site
+  on:
+    branch: main
