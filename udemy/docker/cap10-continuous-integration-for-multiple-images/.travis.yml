@@ -1,0 +1,26 @@
+sudo: required
+services:
+ - docker
+
+before_install:
+ - docker build -t gsbiel/react-test -f ./client/Dockerfile.dev ./client
+
+# Run tests in the react app
+# In this project, only the react application has testing suites.
+script:
+ - docker run -e CI=true USERNAME/react-test npm test
+
+# Generate production images
+after_success:
+ # Build prod images
+ - docker build -t gsbiel/multi-client ./client
+ - docker build -t gsbiel/multi-nginx ./nginx
+ - docker build -t gsbiel/multi-server ./server
+ - docker build -t gsbiel/multi-worker ./worker
+ # Log in docker hub
+ - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+ # Push prod images to docker hub
+ - docker push gsbiel/multi-client
+ - docker push gsbiel/multi-nginx
+ - docker push gsbiel/multi-server
+ - docker push gsbiel/multi-worker

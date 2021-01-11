@@ -42,6 +42,8 @@ docker exec -it containerID sh
 docker build .
 # Faz o build e atribui uma tag à imagem
 docker build -t dockerID/nomeDaImagem:latest .
+# Faz o build com um dockerfile com nome diferente
+docker build -f Dockerfile.dev -t dockerID/nomeDaImagem:latest .
 
 # A partir de um container, é possível criar uma imagem com o seu estado atual, passando inclusive o comando
 # para executar a aplicação que tiver sido instalada dentro dele.
