@@ -1,4 +1,4 @@
-# Section 5 - Docker compose with multiple local containers
+# **Section 5 - Docker compose with multiple local containers**
 
 A **docker-compose** file is the best way of managing multiple containers in a local machine. Until now, you have been working with containers using the CLI, which is the **imperative** way of dealing with docker.
 
@@ -33,20 +33,19 @@ services:
 
 ### Important notes about some fields:
 
-<br/>
-
 ```YML
 restart: always
 ```
 There are other options for this field. Lets check each one of them:
+
 - **always**
-  - as already stated, the container will be restarted as soon as it gets stopped, no matter the reason.
+    - as already stated, the container will be restarted as soon as it gets stopped, no matter the reason.
 - **no**
-  - the container will never be restarted. If it gets stopped, it will remain as such.
+    - the container will never be restarted. If it gets stopped, it will remain as such.
 - **on-failure**
-  -  every process returns an integer when it gets to an end.
-  -  if the returned value is 0, so the end has been caused on purpose.
-  -  else, the end has been caused due to an error.
-  -  for this policy, if a container terminates with an exit code other than zero, then it is going to be restarted. 
+    -  every process returns an integer when it gets to an end.
+    -  if the returned value is 0, so the end has been caused on purpose.
+    -  else, the end has been caused due to an error.
+    -  for this policy, if a container terminates with an exit code other than zero, then it is going to be restarted. 
 - **unless-stopped**
-  - the container will always be restarted, unless it has been stopped by command line.
+    - the container will always be restarted, unless it has been stopped by command line.

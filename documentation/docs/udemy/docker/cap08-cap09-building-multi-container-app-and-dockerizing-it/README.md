@@ -1,13 +1,16 @@
-# Sections 8 and 9 - Building multi-container applications and dockerizing them 
+# **Sections 8 and 9 - Building multi-container applications and dockerizing them **
 
 In this section, we will learn how to set up a multi-container development environment using docker-compose.
+
 The process consists of the following steps:
+
 - create a Dockerfile.dev within each project folder
 - build the image for each project
 - create a docker-compose.yml file do deploy the containers
 - create a nginx server to proxy incoming requests based on route params.
 
-The most important thing here is to understand the very last step, that is the nginx server. <br/>
+The most important thing here is to understand the very last step, that is the nginx server.
+
 The nginx server will proxy incoming requests based on route params. For instance, if the developer enters an URL ending with /api/values/current, so the request will be redirected to the backend. If the URL ends with "/", it will be redirected to the frontend application.
 
 In the host machine, the nginx server knows exactly on which port each service is listening to (we configure this through rules written in a default.conf file).

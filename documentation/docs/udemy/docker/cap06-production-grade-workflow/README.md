@@ -1,11 +1,11 @@
-# Section 6 - Creating a production grade workflow
+# **Section 6 - Creating a production grade workflow**
 
 In a professional workflow, there usually exist two dockerfiles, one for development purposes and the other for production ones.
 Why? Because, in general, when an application is being developed, everything happens inside a development environment. This environment allows the developer to make code changes, test them, and see their effects in real-time. So, no build process is needed to check if the changes have worked well or not.
 
 <hr />
 
-## Development
+## **Development**
 
 <hr/>
 
@@ -72,15 +72,14 @@ The second one is exactly what we have discussed in the previous paragraph. The 
 
 During the build process, dependencies have been installed in the image file system. For a Nodejs application, these dependencies are stored in a folder called node_modules. When you deploy a container using the image and mount your local file system inside the container, the docker server will notice that there is a folder called node_modules inside the container that does not match any folder in the context! To avoid it from being deleted, we transform it into a volume for the container.
 
-<br/>
-
 <hr />
 
-## Testing
+## **Testing**
 
 <hr/>
 
-After the changes had been made, it is time to test the app!. There are three different approaches to this situation, each one with its pros and cons.
+After the changes have been made, it is time to test the app!. <br/>
+There are three different approaches to this situation, each one with its pros and cons.
 
 <br/>
 
@@ -108,7 +107,7 @@ This approach is pretty handy. The downside of it is that you will have to type 
 
 <br/>
 
-**Third:**:
+**Third**:
 
 With this approach, the idea is to create a new service in the docker-compose file responsible for testing the app. It would look like as presented below:
 

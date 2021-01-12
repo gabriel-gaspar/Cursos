@@ -1,5 +1,8 @@
-# Cap3 - Building custom images
+# **Section 3 - Building custom images**
 
+In order to build your own docker images, you need to create a dockerfile which is a kind of a recipe.
+
+A basic implementation of a dockerfile would be as the following:
 
 ```dockerfile
 # Imagem base
@@ -12,9 +15,13 @@ RUN apk add --update redis
 CMD ["redis-server"]
 ```
 
+After you have finished writing the dockerfile, the next step is to build a docker image from it. For that, there is the following command:
+
 ```shell
 >> docker build .
 ```
+
+Now, let's break the dockerfile down, line by line.
 
 <hr />
 

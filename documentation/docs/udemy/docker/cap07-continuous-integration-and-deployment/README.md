@@ -1,4 +1,4 @@
-# Section 7 - Continuous integration and deployment
+# **Section 7 - Continuous integration and deployment**
 
 A continuous integration pipeline with Travis CI starts when the user creates a pull-request to a master branch. When this situation occurs, Travis CI pulls all the code and starts the testing routines.
 
