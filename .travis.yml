@@ -17,6 +17,7 @@ script:
   # Retrieve de container ID and exec mkdoc build inside it 
   - docker container exec -it $(docker container ls | grep squidfunk/mkdocs-material | awk '{print $1}') mkdocs build
   - ls
+  - ls ./documentation
 
 deploy:
   provider: pages
