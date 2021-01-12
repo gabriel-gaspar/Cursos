@@ -1,5 +1,30 @@
 site_name: My Documentation
+
 theme:
   name: material
+  features:
+    - navigation.sections   
+
 nav:
-  - Home: 'index.md'
+  - Home: './index.md'
+  
+  - Mkdocs:
+    - 'Getting Started' : ./mkdocs/mkdocs-getting-started-with-docker.md
+
+  - Udemy:
+
+    - Linux:
+      - 'Section 03' : './udemy/linux/cap03-system-access-and-file-system/'
+      - 'Section 04' : './udemy/linux/cap04-linux-fundamentals/'
+
+    - Docker: 
+      - 'Section 01' : './udemy/docker/cap01-dive-into-docker/' 
+      - 'Section 02' : './udemy/docker/cap02-manipulating-containers/'
+      - 'Section 03' : './udemy/docker/cap03-building-custom-images/'
+      - 'Section 04' : './udemy/docker/cap04-making-real-projects/'
+      - 'Section 05' : './udemy/docker/cap05-docker-compose/'
+      - 'Section 06' : './udemy/docker/cap06-production-grade-workflow/'
+      - 'Section 07' : './udemy/docker/cap07-continuous-integration-and-deployment/'
+      - 'Sections 08 and 09' : './udemy/docker/cap08-cap09-building-multi-container-app-and-dockerizing-it/'
+      - 'Section 10' : './udemy/docker/cap10-continuous-integration-for-multiple-images/'
+    
