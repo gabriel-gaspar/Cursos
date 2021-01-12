@@ -1,0 +1,29 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  - DOCKER_COMPOSE_VERSION: 1.23.2
+
+before_install:
+  - sudo rm /usr/local/bin/docker-compose
+  - curl -L https://github.com/docker/compose/releases/download/${DOCKER_COMPOSE_VERSION}/docker-compose-`uname -s`-`uname -m` > docker-compose
+  - chmod +x docker-compose
+  - sudo mv docker-compose /usr/local/bin
+
+script:
+  - docker-compose up -d --build
+  # Retrieve de container ID and exec mkdoc build inside it 
+  - docker container exec -it $(docker container ls | grep squidfunk/mkdocs-material | awk '{print $1}') mkdocs build
+  - ls
+  - ls ./documentation
+  - pwd
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $github_token
+  local_dir: /home/travis/build/gabriel-gaspar/cursos/documentation/site
+  on:
+    branch: main
