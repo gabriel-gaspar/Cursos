@@ -26,6 +26,7 @@ If you want to exit the insert mode, just press ESC.
 
 ## **Lesson 80**
 Vi and Vim are pretty much the same text editor. Some differences between them are the following ones:
+
 - Vim has a GUI and some enhancements
 - Vi is supported in all linux distributions and Vim does not.
 
@@ -88,3 +89,25 @@ Afer you create a new user, make sure you also create a password for it, using t
 ```
 passwd spiderman
 ```
+
+## **Lesson 83**
+If you are logged as an user, let's say gaspar, and wants to change to another user, like gabriel, run the command below:
+
+```
+>> su - gabriel
+```
+
+The system will prompt you to insert the password of the user gabriel.
+
+Important note: If you are logged as the root user, you can change the login to any user of the system without even knowing its password.
+
+Speaking about the root user, it is important to keep in mind that he is the system administrator. A long time ago, if a user wanted to perform administrative tasks, he had to log in as root using the command "su -". Later on, the sudo command was created and, since then, users were allowed to execute commands with administrator privileges as long as they had their user ID registered in the /etc/sudoers file. The root credentials were not needed anymore. 
+
+Therefore, the /etc/sudoers file determines who can use the sudo command and what they can do with it.
+To edit this file, you have to run the command:
+
+```
+>> visudo
+```
+
+You can read more about this file [here](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file#:~:text=The%20visudo%20command%20opens%20a,with%20the%20vi%20text%20editor.) and [here](https://unix.stackexchange.com/questions/291454/difference-between-sudo-user-and-root-user#:~:text=1%20Answer&text=Executive%20summary%3A%20%22root%22%20is,users%20to%20perform%20administrative%20tasks.&text=Root%20can%20access%20any%20file,call%2C%20and%20modify%20any%20setting.).

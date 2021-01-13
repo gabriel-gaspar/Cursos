@@ -1,14 +1,6 @@
 # Comando aprendidos neste capítulo
 
 # Utilitários -------------------------------------------------------------------------------------------
-
-# exibe usuario atual logado no sistema
-whoami
-
-# trocar de usuário
-su
-su - # trocar para o usuário root
-
 clear # limpa terminal
 
 ln /home/gaspar/contrato #cria hard link para arquivo
@@ -169,6 +161,13 @@ chgrp -R superheros spiderman
 passwd # inicia algoritmo para troca da senha do usuário atual
 passwd userId # inicia algoritmo para troca da senha de um usuário (necessário estar como root)
 passwd - # inicia algoritmo para troca da senha do usuário root (necessário estar como root)
+
+# exibe usuario atual logado no sistema
+whoami
+# trocar de usuário
+su - # change the user logged in to the root user
+su - gaspar # change the user logged in to gaspar 
+
 
 # Controle de permissões -
 chmod g-w jerry
