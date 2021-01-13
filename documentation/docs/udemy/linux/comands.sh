@@ -118,6 +118,36 @@ find . -name gaspar.txt # a partir do caminho atual, procura pelo arquivo
 find / -name gaspar.txt # procura o arquivo a partir da raíz do sistema (necessário acesso root)
 locate gaspar.txt # procura o arquivo
 
+# Manipulação de arquivos
+# Replace all "Kenny" occurencies by "Lenny" and returns the result
+# The original file won't be modified
+# "s" is for substitute and "g" is for global (all file)
+sed 's/Kenny/Lenny/g' fileName > newFile
+# Remove all occurencies of "Constanza" in fileName
+sed 's/Constanza//g' fileName > newFile
+# Remove the lines with the string "Seinfeld"
+# "d" is for delete
+sed '/Seinfeld/d' fileName > newFile
+# Remove the first line of the file
+sed '1d' fileName > newFile
+# Remove the first and the second lines of the file
+sed '1,2d' fileName > newFile
+# Replace tabs by spaces in the file
+sed 's/\t/ /g' fileName > newFile
+# Replace spaces by tabs
+sed 's/ /\t/g' fileName > newFile
+# Remove all empty lines
+sed '/^$/d' fileName > newFile
+# Read lines in the range 12-18
+sed -n 12,18p fileName > newFile
+# Read everything except lines in range 12-18
+sed 12,18d fileName > newFile
+# Add an empty line between each non-empty line
+sed G fileName > newFile
+# Now the original file will be changed
+sed -i 's/Kenny/Lenny/g' fileName
+
+
 # Controle de usuários ------------------------------------------------------------------------------------
 passwd # inicia algoritmo para troca da senha do usuário atual
 passwd userId # inicia algoritmo para troca da senha de um usuário (necessário estar como root)

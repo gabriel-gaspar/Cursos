@@ -28,3 +28,22 @@ If you want to exit the insert mode, just press ESC.
 Vi and Vim are pretty much the same text editor. Some differences between them are the following ones:
 - Vim has a GUI and some enhancements
 - Vi is supported in all linux distributions and Vim does not.
+
+## **Lesson 81**
+Sed command is used in a variety of usecases. Some of them are the following:
+
+- replace a string in a file with a new string
+- find and delete a line that contains a string
+- remove empty lines
+- remove the first or n lines in a file
+- replace tabs with spaces
+- show defined lines from a file
+- substitute words within vi editor
+
+If you happened to want to replace all occurences of the name Seinfeld by the name Peter in a file, you could do this in the Vi editor by accessing the command mode and typying:
+
+```
+>> :%s/Seinfeld/Peter/
+```
+
+That is how you could use the sed command inside the editor.
