@@ -23,3 +23,8 @@ As soon as you open a file using vi, you start in its command mode. There are th
 
 When you are in the insert mode, you can make changes in the text.
 If you want to exit the insert mode, just press ESC.
+
+## **Lesson 80**
+Vi and Vim are pretty much the same text editor. Some differences between them are the following ones:
+- Vim has a GUI and some enhancements
+- Vi is supported in all linux distributions and Vim does not.
