@@ -149,6 +149,23 @@ sed -i 's/Kenny/Lenny/g' fileName
 
 
 # Controle de usuários ------------------------------------------------------------------------------------
+useradd spiderman # create a user called spiderman (this command will also create a group called spiderman and a folder for the user in /home)
+groupadd superheros # create a user group called superheros
+cat /etc/group # list all the groups registered on the system and the users placed in each one of them
+userdel spiderman # delete only the user, its folder remains in home directory
+userdel -r spiderman # delete the user and its folder in home directory
+groupdel newGroup # delete a group
+id spiderman # shows the user ID, group ID
+
+# add spiderman user to superheros group
+# every user has its own group, with the same name.
+# the command below will add the spiderman group to the superheros group
+# so, the spiderman user will remain in the spiderman group
+usermod -G superheros spiderman 
+# the command below will do the oposite. It will place the spiderman user in the superheros group.
+# now, the spiderman group won't have any users associated with itself
+chgrp -R superheros spiderman 
+
 passwd # inicia algoritmo para troca da senha do usuário atual
 passwd userId # inicia algoritmo para troca da senha de um usuário (necessário estar como root)
 passwd - # inicia algoritmo para troca da senha do usuário root (necessário estar como root)
