@@ -111,3 +111,10 @@ To edit this file, you have to run the command:
 ```
 
 You can read more about this file [here](https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file#:~:text=The%20visudo%20command%20opens%20a,with%20the%20vi%20text%20editor.) and [here](https://unix.stackexchange.com/questions/291454/difference-between-sudo-user-and-root-user#:~:text=1%20Answer&text=Executive%20summary%3A%20%22root%22%20is,users%20to%20perform%20administrative%20tasks.&text=Root%20can%20access%20any%20file,call%2C%20and%20modify%20any%20setting.).
+
+## **Lesson 84**
+If you want to monitor users in a linux System, there are some useful commands for that.
+
+- who: it shows all users logged in the system 
+- last: it shows a history of user accesses
+

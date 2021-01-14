@@ -168,6 +168,10 @@ whoami
 su - # change the user logged in to the root user
 su - gaspar # change the user logged in to gaspar 
 
+who # Shows all users logged in the system
+last | more # shows a history of user accesses
+last | awk '{print $1}' | sort | uniq # show all user that have accessed the system since the begining.
+
 
 # Controle de permissões -
 chmod g-w jerry
