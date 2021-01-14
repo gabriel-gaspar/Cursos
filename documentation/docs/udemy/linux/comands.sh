@@ -20,6 +20,9 @@ cal 12 2010 # show the calendar of December 2010
 cal 2010 # show the calendar of all months in 2010
 bc # start a binary calculator
 
+shutdown # shutdown the system gracefully
+halt # shutdown the system imediately
+reboot # reboot the system
 
 # Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
