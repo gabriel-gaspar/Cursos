@@ -218,6 +218,18 @@ All the logs produces by the system and applications running on it are stored in
 - /var/log/messages
 - /var/log/httpd
 
+## **Lesson 95**
+Every Linux system has a hostname. It is a good practice to choose a hostname that matches the purpose of the server. <br/>
+The hostname is stored in the file /etc/hostname.
+
+You can change the hostname by editing this file, or by running the following command:
+
+```
+>> hostnamectl set-hostname newHostname
+```
+
+After changing the hostname, the system must be rebooted.
+
 
 
 
