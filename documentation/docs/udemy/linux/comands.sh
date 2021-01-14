@@ -10,7 +10,16 @@ man ls # acessa o manual do comando ls
 whatis ls # obtém descrição de um comando
 ls --help #
 
+hostname # show the name of the host machinee
+uname # show the name of the operating system 
+which pwd # show the location of a certain command, pwd in this case
+uptime # show for how long the system has been running 
 date # obtém a data atual
+cal # show a calendar of the current month in the terminal
+cal 12 2010 # show the calendar of December 2010
+cal 2010 # show the calendar of all months in 2010
+bc # start a binary calculator
+
 
 # Rede ---------------------------------------------------------------------------------------------------
 ifconfig # Lista interfaces de rede
