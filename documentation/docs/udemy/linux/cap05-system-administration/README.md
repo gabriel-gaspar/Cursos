@@ -180,6 +180,30 @@ Thread - depending of its implementation, a process can have multiple execution 
 
 Jobs - It is also a type of process but it is started from time to time to execute a task.
 
+## **Lesson 90**
+
+Crontab is a file in which you can schedule tasks to be executed periodicaly. <br/> 
+You can read more about crontabs [here](https://guialinux.uniriotec.br/crontab/).
+
+Linux systems provide some pre-defined cronjobs out of the box.
+
+- hourly
+    - It is folder located at: /etc/cron.hourly
+    - In it you can add scripts to be executed in a hourly basis
+    - The exact hour is defined in the file: /etc/cron.d/0hourly
+- daily
+    - It is a folder located at: /etc/cron.daily
+    - In it you can add scripts to be executed in a daily basis
+    - The exact day is defined in the file: /etc/anacrontab
+- weekly
+    - It is a folder located at: /etc/cron.weekly
+    - In it you can add scripts to be executed in a weekly basis
+    - The exact day of each week is defined in the file: /etc/anacrontab
+- monthly
+    - It is a folder located at: /etc/cron.monthly
+    - In it you can add scripts to be executed in a monthly basis
+    - The exact day of each month is defined in the file: /etc/anacrontab
+
 
 
 
