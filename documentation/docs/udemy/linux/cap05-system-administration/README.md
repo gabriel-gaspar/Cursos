@@ -118,3 +118,23 @@ If you want to monitor users in a linux System, there are some useful commands f
 - who: it shows all users logged in the system 
 - last: it shows a history of user accesses
 
+## **Lesson 85**
+In a Linux system that receives simultaneous accesses from different users, it may happen a situation in which you need to communicate to some of the users or to broadcast a message to all users who are logged in the system. For that, there are the following commands:
+
+```
+# shows all users that are logged in the system
+>> users
+```
+
+```
+# Broadcasts a message to all users that are logged in the system
+# You write the message and press ctrl+d to broadcast it
+>> wall
+```
+
+```
+# Send a message to a user that is logged in the system
+>> write userName
+
+```
+

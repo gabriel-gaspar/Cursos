@@ -172,6 +172,10 @@ who # Shows all users logged in the system
 last | more # shows a history of user accesses
 last | awk '{print $1}' | sort | uniq # show all user that have accessed the system since the begining.
 
+users # shows all users logged in the system
+wall # broadcasts a message to all users in the system
+write userName # sends a message to a specific user in the system
+
 
 # Controle de permissões -
 chmod g-w jerry
