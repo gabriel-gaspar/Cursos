@@ -206,4 +206,18 @@ Linux systems provide some pre-defined cronjobs out of the box.
 
 
 
+## **Lesson 93**
+
+All the logs produces by the system and applications running on it are stored in the following folders:
+
+- /var/log/boot
+- /var/log/chronyd
+- /var/log/cron
+- /var/log/maillog
+- /var/log/secure
+- /var/log/messages
+- /var/log/httpd
+
+
+
 
