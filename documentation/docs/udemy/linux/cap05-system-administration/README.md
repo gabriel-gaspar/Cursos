@@ -115,8 +115,15 @@ You can read more about this file [here](https://www.digitalocean.com/community/
 ## **Lesson 84**
 If you want to monitor users in a linux System, there are some useful commands for that.
 
-- who: it shows all users logged in the system 
-- last: it shows a history of user accesses
+```
+# It shows all users logged into the system 
+>> who
+``` 
+
+```
+# It shows a history of user accesses
+>> last
+```
 
 ## **Lesson 85**
 In a Linux system that receives simultaneous accesses from different users, it may happen a situation in which you need to communicate to some of the users or to broadcast a message to all users who are logged in the system. For that, there are the following commands:
