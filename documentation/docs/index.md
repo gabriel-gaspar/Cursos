@@ -1,6 +1,3 @@
-# Welcome to my Mkdoc!
+# **Welcome to my WineDoc!**
 
-
-
-**Enjoy!**
-
+<img src="./assets/images/EOM_Blog_Online-data.jpg">
