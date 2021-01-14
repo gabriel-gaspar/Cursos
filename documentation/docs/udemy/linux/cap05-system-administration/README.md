@@ -145,3 +145,22 @@ In a Linux system that receives simultaneous accesses from different users, it m
 
 ```
 
+## **Lessons 86-87**
+If you work with only one Linux server, you can manage users using the commands you have learned so far. 
+But, if you have hundreds of Linux servers, how could you manage users of every server? It is impractical to access one by one and configure user accounts.
+
+The solution for this cenario is called Directory Service. In this approach, a server hosts a database of users that is shared by all other servers of the system. So, a user in one of the servers will authenticate to the Directory Service and get access to the system.
+In this ecossystem, there are some import terms to learn:
+
+- Active Directory
+    - It is the name of the Directory Service in Windows Systems.
+- IDM - Identity manager
+    -  It is the name of the Directory Service in Red Hat Linux Systems.
+- WinBIND 
+    - Is a tool that allows a Linux system to communicate with a Windows system and vice-versa.
+    - this way, a Linux user can authenticate to a Active Directory, and a Windows user can authenticate to a Directory Service
+- LDAP - Light Directory Access Protocol
+    - It is the protocol used in the process of authentication
+- OpenLDAP
+    - It is the name of the Directory Service in Linux Systems.
+
