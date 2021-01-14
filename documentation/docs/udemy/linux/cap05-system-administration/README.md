@@ -164,3 +164,22 @@ In this ecossystem, there are some import terms to learn:
 - OpenLDAP
     - It is the name of the Directory Service in Linux Systems.
 
+
+## **Lesson 89**
+Concepts learned in the class:
+
+Application - It is also called a Service and is basicaly a software that runs on the computer (NTP, NFS, Apache, Nginx, rsyslog etc...)
+
+Script - It is a bunch of instructions wrapped up in a file.
+
+Process - Each application running on the system has a process associated to it. I understant it as an instance of the application which consumes system resources.
+
+Daemon - It is a type of process, the difference here is that the user does not have access to it. A Daemon keeps running in the background until the system is shut down.
+
+Thread - depending of its implementation, a process can have multiple execution branches, each branch is called a thread.
+
+Jobs - It is also a type of process but it is started from time to time to execute a task.
+
+
+
+

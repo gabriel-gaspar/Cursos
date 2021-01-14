@@ -185,7 +185,6 @@ users # shows all users logged in the system
 wall # broadcasts a message to all users in the system
 write userName # sends a message to a specific user in the system
 
-
 # Controle de permissões -
 chmod g-w jerry
 chmod u-w jerry
@@ -206,5 +205,17 @@ setfacl -m u:userName:rwx /path/to/file
 setfacl -m g:groupName:rw path/to/file
 setfacl -dm "rwx" /path/to/file
 setfacl -b /path/to/file
+
+# Process Management
+ps -ef # show all processes running on the system
+ps -ef | grep ntpd # search for a specific process
+systemctl status ntpd # show more detailed information about a specific process
+systemctl restart processName # restart a service by name
+systemctl restart processID # restart a service by processID
+systemctl stop ntpd # stop a process
+systemctl enable ntpd # configure the service to start automaticaly when the system is booted
+top # list all processes running on the system and the resources consumption.
+kill processID # kill a processm
+
 
 
