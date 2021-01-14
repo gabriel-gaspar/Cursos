@@ -216,6 +216,30 @@ systemctl stop ntpd # stop a process
 systemctl enable ntpd # configure the service to start automaticaly when the system is booted
 top # list all processes running on the system and the resources consumption.
 kill processID # kill a processm
+pkill processName # kill a process by name
+
+# System monitoring
+# List partitions of the file system
+# For each partition, tt also shows total size, available space, percentage of usage and the path in which it is mounted.
+df -h
+# From the current path, lists all the folders recursively and the disk space each one is consuming
+du -h
+# List all logs produced by the system kernel.
+dmesg | more
+# show disk usage (read and write)
+# it has to be installed first: sudo apt-get install sysstat / yum install sysstat
+iostat # just one time
+iostat 1 # keeps refreshing on each second
+# shows information about gateways, routing tables and nework connections
+netstat -rnv 
+# show information about the RAM
+free -h
+# List information about the CPU e Memory
+cat /proc/cpuinfo
+cat /proc/meminfo
+
+
+
 
 
 
