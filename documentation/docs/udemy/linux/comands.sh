@@ -12,6 +12,7 @@ ls --help #
 
 hostname # show the name of the host machinee
 uname # show the name of the operating system 
+uname -a # show a complete information about the SO
 which pwd # show the location of a certain command, pwd in this case
 uptime # show for how long the system has been running 
 date # obtém a data atual
@@ -240,7 +241,18 @@ free -h
 # List information about the CPU e Memory
 cat /proc/cpuinfo
 cat /proc/meminfo
-
+# List all information about the system (this is the most complete command and will return a lot of text)
+sudo dmidecode
+# Shows if the system is 32 bits or 64 bits
+arch
+# prints all system environment variables
+printenv 
+env
+# print a specific environment variable
+echo $SHELL
+# creates a new environment variable (not permanent, if you close the terminal, the env is lost)
+export TEST=1
+echo $TEST
 
 
 

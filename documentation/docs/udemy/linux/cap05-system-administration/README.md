@@ -207,7 +207,6 @@ Linux systems provide some pre-defined cronjobs out of the box.
 
 
 ## **Lesson 93**
-
 All the logs produces by the system and applications running on it are stored in the following folders:
 
 - /var/log/boot
@@ -229,6 +228,20 @@ You can change the hostname by editing this file, or by running the following co
 ```
 
 After changing the hostname, the system must be rebooted.
+
+## **Lesson 102**
+If you want to permanently set environment variables for your user runtime, you have to access the file ~/bashrc and add something like this:
+
+```
+TEST="123"
+EXPORT TEST
+```
+
+If you want to set environment variables globaly, that is, for all users, you have to access the following files and do the same as above. They are:
+/etc/bashrc
+/etc/profile
+
+Take care! Overwritint an existing global environment variable can cause a lot of damage to the system!
 
 
 
