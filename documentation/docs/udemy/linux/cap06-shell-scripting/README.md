@@ -22,6 +22,26 @@ There are the following types of Shell:
     - It is another type of CLI for Shell commands.
     - It stands for "born again shell"
     - It is like the "sh" but with a lot of new features.
+
+
+## **Lesson 109**
+The first line of any shell script must begins with:
+
+```
+#!/bin/bash
+```
+
+Every shell script, after it has been written, must have executable permissions, otherwise, you won't be able to execute it.
+
+You can execute the script in the command line typing something like:
+
+```
+# If it is a bash script:
+./nameOfTheScript.bash
+# If it is a shell script:
+./nameOfTheScript.sh
+```
+
   
 
 
