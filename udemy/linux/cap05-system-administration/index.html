@@ -1,0 +1,870 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+    
+    
+      
+        <title>**Section 5 - System administration** - WineDoc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-5-system-administration" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="WineDoc" class="md-header-nav__button md-logo" aria-label="WineDoc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            WineDoc
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              **Section 5 - System administration**
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WineDoc" class="md-nav__button md-logo" aria-label="WineDoc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    WineDoc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+    
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
+    <label class="md-nav__link" for="nav-2">
+      Mkdocs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Mkdocs" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Mkdocs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../../mkdocs/mkdocs-getting-started-with-docker/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+    
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
+    <label class="md-nav__link" for="nav-3">
+      Udemy
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Udemy" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Udemy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Linux
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap03-system-access-and-file-system/" class="md-nav__link">
+      Section 03
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap04-linux-fundamentals/" class="md-nav__link">
+      Section 04
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="./" class="md-nav__link">
+      Section 05
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap06-shell-scripting/" class="md-nav__link">
+      Section 06
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Docker
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docker" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap01-dive-into-docker/" class="md-nav__link">
+      Section 01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap02-manipulating-containers/" class="md-nav__link">
+      Section 02
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap03-building-custom-images/" class="md-nav__link">
+      Section 03
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap04-making-real-projects/" class="md-nav__link">
+      Section 04
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap05-docker-compose/" class="md-nav__link">
+      Section 05
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap06-production-grade-workflow/" class="md-nav__link">
+      Section 06
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap07-continuous-integration-and-deployment/" class="md-nav__link">
+      Section 07
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap08-cap09-building-multi-container-app-and-dockerizing-it/" class="md-nav__link">
+      Sections 08 and 09
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap10-continuous-integration-for-multiple-images/" class="md-nav__link">
+      Section 10
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-79" class="md-nav__link">
+    Lesson 79
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-80" class="md-nav__link">
+    Lesson 80
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-81" class="md-nav__link">
+    Lesson 81
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-82" class="md-nav__link">
+    Lesson 82
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-83" class="md-nav__link">
+    Lesson 83
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-84" class="md-nav__link">
+    Lesson 84
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-85" class="md-nav__link">
+    Lesson 85
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-86-87" class="md-nav__link">
+    Lessons 86-87
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-89" class="md-nav__link">
+    Lesson 89
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-90" class="md-nav__link">
+    Lesson 90
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-93" class="md-nav__link">
+    Lesson 93
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-95" class="md-nav__link">
+    Lesson 95
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-102" class="md-nav__link">
+    Lesson 102
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="section-5-system-administration"><strong>Section 5 - System administration</strong></h1>
+<h2 id="lesson-79"><strong>Lesson 79</strong></h2>
+<p>As soon as you open a file using vi, you start in its command mode. There are the following commands you can type in this mode:</p>
+<ul>
+<li>i<ul>
+<li>insert mode</li>
+</ul>
+</li>
+<li>r<ul>
+<li>replace mode</li>
+</ul>
+</li>
+<li>d<ul>
+<li>delete an entire line</li>
+</ul>
+</li>
+<li>x<ul>
+<li>delete character by character in a line</li>
+</ul>
+</li>
+<li>u<ul>
+<li>undo the last change made in command mode</li>
+</ul>
+</li>
+<li>/keyword<ul>
+<li>search the keyword in the file</li>
+</ul>
+</li>
+<li>:q!<ul>
+<li>quit without saving</li>
+</ul>
+</li>
+<li>:wq! <ul>
+<li>quit and save changes</li>
+<li>you can also do this by pressing shift+z+z</li>
+</ul>
+</li>
+</ul>
+<p>When you are in the insert mode, you can make changes in the text.
+If you want to exit the insert mode, just press ESC.</p>
+<h2 id="lesson-80"><strong>Lesson 80</strong></h2>
+<p>Vi and Vim are pretty much the same text editor. Some differences between them are the following ones:</p>
+<ul>
+<li>Vim has a GUI and some enhancements</li>
+<li>Vi is supported in all linux distributions and Vim does not.</li>
+</ul>
+<h2 id="lesson-81"><strong>Lesson 81</strong></h2>
+<p>Sed command is used in a variety of usecases. Some of them are the following:</p>
+<ul>
+<li>replace a string in a file with a new string</li>
+<li>find and delete a line that contains a string</li>
+<li>remove empty lines</li>
+<li>remove the first or n lines in a file</li>
+<li>replace tabs with spaces</li>
+<li>show defined lines from a file</li>
+<li>substitute words within vi editor</li>
+</ul>
+<p>If you happened to want to replace all occurences of the name Seinfeld by the name Peter in a file, you could do this in the Vi editor by accessing the command mode and typying:</p>
+<pre><code>&gt;&gt; :%s/Seinfeld/Peter/
+</code></pre>
+<p>That is how you could use the sed command inside the editor.</p>
+<h2 id="lesson-82"><strong>Lesson 82</strong></h2>
+<p>Every time a new user is created, its records are stored in three different files in the Linux system. They are:</p>
+<ul>
+<li>/etc/passwd</li>
+<li>/etc/group</li>
+<li>/etc/shadow</li>
+</ul>
+<p>You can see informations about all users accessing the file /etc/passwd. For instance:</p>
+<pre><code>&gt;&gt; cat /etc/passwd | grep spiderman
+</code></pre>
+<p>The command above will output something like:</p>
+<pre><code>spiderman:x:1002:1002::/home/spiderman:/bin/bash
+</code></pre>
+<p>Where:</p>
+<ul>
+<li>spiderman : name of the user</li>
+<li>x : it is the user password. As it is encrypted, the letter "x" is placed to represent it.</li>
+<li>1002 : it is the user ID</li>
+<li>1002: it is the user group ID. As the default, every user is created in its own group, with the same name and same ID.</li>
+<li>:: : it is the description of the user. In this case, the field is empty</li>
+<li>/home/spiderman : it is the path to the user directory</li>
+<li>/bin/bash : it is the path to the bash terminal. That means the user has access to it.</li>
+</ul>
+<p>You can change all the default parameters with the complete command showned below:</p>
+<pre><code>useradd -g superheros -s /bin/bash -c &quot;this is the user description&quot; -m -d /home/spiderman spiderman
+</code></pre>
+<p>Afer you create a new user, make sure you also create a password for it, using the command below:</p>
+<pre><code>passwd spiderman
+</code></pre>
+<h2 id="lesson-83"><strong>Lesson 83</strong></h2>
+<p>If you are logged as an user, let's say gaspar, and wants to change to another user, like gabriel, run the command below:</p>
+<pre><code>&gt;&gt; su - gabriel
+</code></pre>
+<p>The system will prompt you to insert the password of the user gabriel.</p>
+<p>Important note: If you are logged as the root user, you can change the login to any user of the system without even knowing its password.</p>
+<p>Speaking about the root user, it is important to keep in mind that he is the system administrator. A long time ago, if a user wanted to perform administrative tasks, he had to log in as root using the command "su -". Later on, the sudo command was created and, since then, users were allowed to execute commands with administrator privileges as long as they had their user ID registered in the /etc/sudoers file. The root credentials were not needed anymore. </p>
+<p>Therefore, the /etc/sudoers file determines who can use the sudo command and what they can do with it.
+To edit this file, you have to run the command:</p>
+<pre><code>&gt;&gt; visudo
+</code></pre>
+<p>You can read more about this file <a href="https://www.digitalocean.com/community/tutorials/how-to-edit-the-sudoers-file#:~:text=The%20visudo%20command%20opens%20a,with%20the%20vi%20text%20editor.">here</a> and <a href="https://unix.stackexchange.com/questions/291454/difference-between-sudo-user-and-root-user#:~:text=1%20Answer&amp;text=Executive%20summary%3A%20%22root%22%20is,users%20to%20perform%20administrative%20tasks.&amp;text=Root%20can%20access%20any%20file,call%2C%20and%20modify%20any%20setting.">here</a>.</p>
+<h2 id="lesson-84"><strong>Lesson 84</strong></h2>
+<p>If you want to monitor users in a linux System, there are some useful commands for that.</p>
+<pre><code># It shows all users logged into the system 
+&gt;&gt; who
+</code></pre>
+<pre><code># It shows a history of user accesses
+&gt;&gt; last
+</code></pre>
+<h2 id="lesson-85"><strong>Lesson 85</strong></h2>
+<p>In a Linux system that receives simultaneous accesses from different users, it may happen a situation in which you need to communicate to some of the users or to broadcast a message to all users who are logged in the system. For that, there are the following commands:</p>
+<pre><code># shows all users that are logged in the system
+&gt;&gt; users
+</code></pre>
+<pre><code># Broadcasts a message to all users that are logged in the system
+# You write the message and press ctrl+d to broadcast it
+&gt;&gt; wall
+</code></pre>
+<pre><code># Send a message to a user that is logged in the system
+&gt;&gt; write userName
+
+</code></pre>
+<h2 id="lessons-86-87"><strong>Lessons 86-87</strong></h2>
+<p>If you work with only one Linux server, you can manage users using the commands you have learned so far. 
+But, if you have hundreds of Linux servers, how could you manage users of every server? It is impractical to access one by one and configure user accounts.</p>
+<p>The solution for this cenario is called Directory Service. In this approach, a server hosts a database of users that is shared by all other servers of the system. So, a user in one of the servers will authenticate to the Directory Service and get access to the system.
+In this ecossystem, there are some import terms to learn:</p>
+<ul>
+<li>Active Directory<ul>
+<li>It is the name of the Directory Service in Windows Systems.</li>
+</ul>
+</li>
+<li>IDM - Identity manager<ul>
+<li>It is the name of the Directory Service in Red Hat Linux Systems.</li>
+</ul>
+</li>
+<li>WinBIND <ul>
+<li>Is a tool that allows a Linux system to communicate with a Windows system and vice-versa.</li>
+<li>this way, a Linux user can authenticate to a Active Directory, and a Windows user can authenticate to a Directory Service</li>
+</ul>
+</li>
+<li>LDAP - Light Directory Access Protocol<ul>
+<li>It is the protocol used in the process of authentication</li>
+</ul>
+</li>
+<li>OpenLDAP<ul>
+<li>It is the name of the Directory Service in Linux Systems.</li>
+</ul>
+</li>
+</ul>
+<h2 id="lesson-89"><strong>Lesson 89</strong></h2>
+<p>Concepts learned in the class:</p>
+<p>Application - It is also called a Service and is basicaly a software that runs on the computer (NTP, NFS, Apache, Nginx, rsyslog etc...)</p>
+<p>Script - It is a bunch of instructions wrapped up in a file.</p>
+<p>Process - Each application running on the system has a process associated to it. I understant it as an instance of the application which consumes system resources.</p>
+<p>Daemon - It is a type of process, the difference here is that the user does not have access to it. A Daemon keeps running in the background until the system is shut down.</p>
+<p>Thread - depending of its implementation, a process can have multiple execution branches, each branch is called a thread.</p>
+<p>Jobs - It is also a type of process but it is started from time to time to execute a task.</p>
+<h2 id="lesson-90"><strong>Lesson 90</strong></h2>
+<p>Crontab is a file in which you can schedule tasks to be executed periodicaly. <br/> 
+You can read more about crontabs <a href="https://guialinux.uniriotec.br/crontab/">here</a>.</p>
+<p>Linux systems provide some pre-defined cronjobs out of the box.</p>
+<ul>
+<li>hourly<ul>
+<li>It is folder located at: /etc/cron.hourly</li>
+<li>In it you can add scripts to be executed in a hourly basis</li>
+<li>The exact hour is defined in the file: /etc/cron.d/0hourly</li>
+</ul>
+</li>
+<li>daily<ul>
+<li>It is a folder located at: /etc/cron.daily</li>
+<li>In it you can add scripts to be executed in a daily basis</li>
+<li>The exact day is defined in the file: /etc/anacrontab</li>
+</ul>
+</li>
+<li>weekly<ul>
+<li>It is a folder located at: /etc/cron.weekly</li>
+<li>In it you can add scripts to be executed in a weekly basis</li>
+<li>The exact day of each week is defined in the file: /etc/anacrontab</li>
+</ul>
+</li>
+<li>monthly<ul>
+<li>It is a folder located at: /etc/cron.monthly</li>
+<li>In it you can add scripts to be executed in a monthly basis</li>
+<li>The exact day of each month is defined in the file: /etc/anacrontab</li>
+</ul>
+</li>
+</ul>
+<h2 id="lesson-93"><strong>Lesson 93</strong></h2>
+<p>All the logs produces by the system and applications running on it are stored in the following folders:</p>
+<ul>
+<li>/var/log/boot</li>
+<li>/var/log/chronyd</li>
+<li>/var/log/cron</li>
+<li>/var/log/maillog</li>
+<li>/var/log/secure</li>
+<li>/var/log/messages</li>
+<li>/var/log/httpd</li>
+</ul>
+<h2 id="lesson-95"><strong>Lesson 95</strong></h2>
+<p>Every Linux system has a hostname. It is a good practice to choose a hostname that matches the purpose of the server. <br/>
+The hostname is stored in the file /etc/hostname.</p>
+<p>You can change the hostname by editing this file, or by running the following command:</p>
+<pre><code>&gt;&gt; hostnamectl set-hostname newHostname
+</code></pre>
+<p>After changing the hostname, the system must be rebooted.</p>
+<h2 id="lesson-102"><strong>Lesson 102</strong></h2>
+<p>If you want to permanently set environment variables for your user runtime, you have to access the file ~/bashrc and add something like this:</p>
+<pre><code>TEST=&quot;123&quot;
+EXPORT TEST
+</code></pre>
+<p>If you want to set environment variables globaly, that is, for all users, you have to access the following files and do the same as above. They are:
+/etc/bashrc
+/etc/profile</p>
+<p>Take care! Overwritint an existing global environment variable can cause a lot of damage to the system!</p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

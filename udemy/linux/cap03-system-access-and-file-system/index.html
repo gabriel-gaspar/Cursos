@@ -1,0 +1,804 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+      <link rel="shortcut icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
+    
+    
+      
+        <title>**Section 3 - System Access and File System** - WineDoc</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.75751829.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-3-system-access-and-file-system" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="../../.." title="WineDoc" class="md-header-nav__button md-logo" aria-label="WineDoc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            WineDoc
+          </span>
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
+            
+              **Section 3 - System Access and File System**
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WineDoc" class="md-nav__button md-logo" aria-label="WineDoc">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 003-3 3 3 0 00-3-3 3 3 0 00-3 3 3 3 0 003 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    WineDoc
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+
+  <li class="md-nav__item">
+    <a href="../../.." class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+    
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
+    
+    <label class="md-nav__link" for="nav-2">
+      Mkdocs
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Mkdocs" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon"></span>
+        Mkdocs
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../../mkdocs/mkdocs-getting-started-with-docker/" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+    
+  
+  <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" >
+    
+    <label class="md-nav__link" for="nav-3">
+      Udemy
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Udemy" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon"></span>
+        Udemy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" >
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Linux
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Linux" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        <span class="md-nav__icon md-icon"></span>
+        Linux
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="./" class="md-nav__link">
+      Section 03
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap04-linux-fundamentals/" class="md-nav__link">
+      Section 04
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap05-system-administration/" class="md-nav__link">
+      Section 05
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../cap06-shell-scripting/" class="md-nav__link">
+      Section 06
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3-2" type="checkbox" id="nav-3-2" >
+    
+    <label class="md-nav__link" for="nav-3-2">
+      Docker
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Docker" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-2">
+        <span class="md-nav__icon md-icon"></span>
+        Docker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap01-dive-into-docker/" class="md-nav__link">
+      Section 01
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap02-manipulating-containers/" class="md-nav__link">
+      Section 02
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap03-building-custom-images/" class="md-nav__link">
+      Section 03
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap04-making-real-projects/" class="md-nav__link">
+      Section 04
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap05-docker-compose/" class="md-nav__link">
+      Section 05
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap06-production-grade-workflow/" class="md-nav__link">
+      Section 06
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap07-continuous-integration-and-deployment/" class="md-nav__link">
+      Section 07
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap08-cap09-building-multi-container-app-and-dockerizing-it/" class="md-nav__link">
+      Sections 08 and 09
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../docker/cap10-continuous-integration-for-multiple-images/" class="md-nav__link">
+      Section 10
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-33" class="md-nav__link">
+    Lesson 33
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-35" class="md-nav__link">
+    Lesson 35
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-36" class="md-nav__link">
+    Lesson 36
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lessons-38-39" class="md-nav__link">
+    Lessons 38-39
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-42" class="md-nav__link">
+    Lesson 42
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-46" class="md-nav__link">
+    Lesson 46
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-48" class="md-nav__link">
+    Lesson 48
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lesson-49" class="md-nav__link">
+    Lesson 49
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="section-3-system-access-and-file-system"><strong>Section 3 - System Access and File System</strong></h1>
+<h2 id="lesson-33"><strong>Lesson 33</strong></h2>
+<p>To access a Linux machine remotely from a Windows machine, a software called Putty is needed.</p>
+<p>If both machines are Linux, the access can be made via SSH connection and no third-party package is required.</p>
+<h2 id="lesson-35"><strong>Lesson 35</strong></h2>
+<p>To connect to a remote machine, its IP address must be known. It is possible to figure it out by accessing its terminal and listing its network interfaces. The commands to do that are listed below: </p>
+<pre><code class="language-shell">&gt;&gt; ifconfig
+&gt;&gt; ip addr 
+&gt;&gt; ip a 
+</code></pre>
+<p>The <strong>ifconfig</strong> command is being deprecated in the latest Linux versions. So, you would rather prefer the other two options.</p>
+<h2 id="lesson-36"><strong>Lesson 36</strong></h2>
+<p>If the remote Linux machine does not have an IP address but does have a network interface, then you will need to activate it manually.</p>
+<p>To do that, access the terminal as root and run the following command:</p>
+<pre><code class="language-shell">&gt;&gt; ifup enp0s3
+</code></pre>
+<p>This command will activate the network interface, which in turn will receive an IP address.</p>
+<p>In the case above, the network interface was identified by <strong>enp0s3</strong>.</p>
+<h2 id="lessons-38-39"><strong>Lessons 38-39</strong></h2>
+<p>The Linux file system is like a directories tree organized hierarchically. At the top, there is a directory called Root. It is also referred to as Slash.</p>
+<p>Within that folder, there is a series of subfolders responsible for storing files and data for different purposes.</p>
+<ul>
+<li><strong>/boot</strong><ul>
+<li>when the system starts, this is the first directory accessed.</li>
+<li>files with information about the boot of the system are stored here.</li>
+</ul>
+</li>
+<li><strong>/root</strong><ul>
+<li>this is the root user directory</li>
+</ul>
+</li>
+<li><strong>/dev</strong><ul>
+<li>it stores files containing information about all physical media of the machine, like HD, audio, USB, keyboard, etc.</li>
+</ul>
+</li>
+<li><strong>/etc</strong><ul>
+<li>it stores configuration files for all native Linux applications, like FTP, NFS, e-mail, DNS, etc.</li>
+<li>if you intend to edit any of them, make a snapshot of it in advance!</li>
+</ul>
+</li>
+<li><strong>/bin ou /usr/b</strong>in<ul>
+<li>it stores files containing the definition of the commands a user can invoke through the terminal (ls, pwd, cd, etc...)</li>
+</ul>
+</li>
+<li><strong>/sbin ou /usr/sbin</strong><ul>
+<li>stores files containing configuration data of the Linux file system.</li>
+</ul>
+</li>
+<li><strong>/opt</strong><ul>
+<li>It stores all files related to the third-party applications the user installs.</li>
+</ul>
+</li>
+<li><strong>/proc</strong><ul>
+<li>each process active in the machine has a file in this folder.</li>
+<li>when the user shuts down the system, all files are deleted.</li>
+</ul>
+</li>
+<li><strong>/lib ou /usr/lib</strong><ul>
+<li>it contains C libraries used by applications installed on the system.</li>
+<li>if the user installs an application that requires some C scripts, those scrips are stored in this folder.</li>
+</ul>
+</li>
+<li><strong>/tmp</strong><ul>
+<li>folder meant to store temporary files.</li>
+</ul>
+</li>
+<li><strong>/home</strong><ul>
+<li>every user of the system has a folder in this directory.</li>
+<li>these folders represent the working directory of each user of the system.</li>
+</ul>
+</li>
+<li><strong>/var</strong><ul>
+<li>every log issued by either the system or the applications running on it is stored here.</li>
+</ul>
+</li>
+<li><strong>/run</strong><ul>
+<li>it stores information about processes running on the system, like PID files.</li>
+<li>when the user shuts down the system, all files here are deleted.</li>
+</ul>
+</li>
+<li><strong>/mnt</strong><ul>
+<li>file-systems mounted in the Linux are placed here.</li>
+</ul>
+</li>
+<li><strong>/media</strong><ul>
+<li>directory in which the data related to every external media is located, like CD-ROM and others.</li>
+</ul>
+</li>
+</ul>
+<h2 id="lesson-42"><strong>Lesson 42</strong></h2>
+<p>In a Linux system, everything is a file. There are seven types of files.</p>
+<ul>
+<li>regular file </li>
+<li>directory </li>
+<li>link </li>
+<li>special file or device file </li>
+<li>socket</li>
+<li>named pipe</li>
+<li>block device</li>
+</ul>
+<p>In a directory, you can run the following command to list all files inside of it, each one with its corresponding type.</p>
+<pre><code>&gt;&gt; ls -l
+</code></pre>
+<p>If the file is a directory, the type field will start by the character <strong>d</strong>. <br/>
+Example: dr-xr-xr-x </p>
+<p>If the file is a link, the type field will start by the character <strong>l</strong>. <br/>
+Example: lrwxrwxrwt</p>
+<p>If the file is a regular one, the type field will start by the character <strong>-</strong>. <br/>
+Example: -rw-r--r--</p>
+<h2 id="lesson-46"><strong>Lesson 46</strong></h2>
+<p>There are two commands available to search for files in a Linux system:  <strong>locate</strong> and <strong>find</strong>.</p>
+<p>The big difference between them is that the first one (locate) maintains a database (a cache) with the path to all files in the system. Thus, when the command is executed, the file is searched in the data base, which returns a quick response (it is faster than the <strong>find</strong> command).
+The second one (<strong>find</strong>) is just a simple command that loops across all files in the system.</p>
+<p>Another important note about the <strong>locate</strong> command: from time to time, the system runs the command <strong>updatedb</strong> to update the cache.</p>
+<p>The package <strong>mlocate</strong> is required to start using the <strong>locate</strong> instruction. You can install it with the command:</p>
+<pre><code>&gt;&gt; yum install mlocate
+</code></pre>
+<h2 id="lesson-48"><strong>Lesson 48</strong></h2>
+<p>In certain situations, you will have to operate on a large amount of files (creation, deletion, copy, etc.). If the file names follow a certain pattern, you can make use of a feature called <strong>WildCards</strong> to operate in each one that matches the pattern.</p>
+<p>There are basically 3 Wildcards:</p>
+<ul>
+<li>*<ul>
+<li>represents the whole (totality)</li>
+</ul>
+</li>
+<li>?<ul>
+<li>represents a value which value does not matter</li>
+</ul>
+</li>
+<li>[]<ul>
+<li>represents a set o selected values</li>
+</ul>
+</li>
+</ul>
+<p><br/></p>
+<p><strong>Example1:</strong><br/></p>
+<p>Let's create 9 files whose names follow the pattern: file1-xyz, file2-xyz, file3-xyz...</p>
+<p>To do that, we can use the wildcard that represents a set of selected values.</p>
+<pre><code>&gt;&gt; touch file[1..9]-xyz
+</code></pre>
+<p><br/></p>
+<p><strong>Example2:</strong><br/></p>
+<p>Let's list every file that starts with "abc" and ends with whatever set of characters.</p>
+<p>In this case, we can use the wildcard that represents the totality.</p>
+<pre><code>&gt;&gt; ls -l abc*
+</code></pre>
+<p><br/></p>
+<p><strong>Example3:</strong><br/></p>
+<p>Let's list every file that ends with "xyz".</p>
+<pre><code>&gt;&gt; ls -l *xyz
+</code></pre>
+<p><br/></p>
+<p><strong>Example4:</strong><br/></p>
+<p>Let's list every file that starts with any character, and followed by "bcd".</p>
+<p>In this case, we have to combine two wildcards.</p>
+<pre><code>&gt;&gt; ls -l ?bcd*
+</code></pre>
+<p><br/></p>
+<p><strong>Example5:</strong><br/></p>
+<p>Let's list every file that contains the string "xy".</p>
+<p>It does not matter which characters come first and which characters come after the string. Furthermore, it does not even matter the amount of them. That is another case for the totality wildcard.</p>
+<pre><code>&gt;&gt; ls -l *xy*
+</code></pre>
+<p><br/></p>
+<p><strong>Example6:</strong><br/></p>
+<p>Let's list all files that contains or the character "x", or the character "y".</p>
+<pre><code>&gt;&gt; ls -l *[xy]*
+</code></pre>
+<h2 id="lesson-49"><strong>Lesson 49</strong></h2>
+<p>Links are a resource very similar to shortcuts in Windows systems.</p>
+<p>They can come in two forms: <strong>Hard</strong> e <strong>Soft</strong>.</p>
+<p>Every file in a Linux system receives an identifier. This number, known as <strong>inode</strong>, refers to the address in memory where the file is stored.</p>
+<p>A <strong>hard link</strong> is a "file" that actualy is a pointer to an <strong>inode</strong>. <br/>
+So, if you create a hard link to a file (or folder), you are creating a pointer that is pointing to the address in memory where the original file is located.
+An important note: if the name of the original file changes, nothing will happen to the hard-link. It will continue pointing to the same file, once the <strong>inode</strong> remains the same.</p>
+<p>A <strong>soft link</strong> is slightly different. It is a pointer to the path of a file. So, if the name of this file changes, the link breaks, because the path to the refered file will change.</p>
+<p>If you want to check what are the inodes of the files in a given directory, just run the following command:</p>
+<pre><code>&gt;&gt; ls -ltri
+</code></pre>
+<p><strong>Examples</strong>:<br/>
+Suppose that we have a file in the following path: /home/gaspar/contract <br/>
+Let's create a <strong>hard-link</strong> and a <strong>soft-link</strong> to it.</p>
+<pre><code>&gt;&gt; ln /home/gaspar/contract
+&gt;&gt; ln -s /home/gaspar/contract
+</code></pre>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: "../../..",
+          features: ['navigation.sections'],
+          search: Object.assign({
+            worker: "../../../assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>
