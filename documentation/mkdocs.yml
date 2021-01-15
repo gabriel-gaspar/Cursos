@@ -17,6 +17,7 @@ nav:
       - 'Section 03' : './udemy/linux/cap03-system-access-and-file-system/'
       - 'Section 04' : './udemy/linux/cap04-linux-fundamentals/'
       - 'Section 05' : './udemy/linux/cap05-system-administration/'
+      - 'Section 06' : './udemy/linux/cap06-shell-scripting/'
 
     - Docker: 
       - 'Section 01' : './udemy/docker/cap01-dive-into-docker/' 
